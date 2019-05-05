@@ -4,9 +4,9 @@
 ;; Author: Hongyi Wu(吴鸿毅)
 ;; Email: wuhongyi@qq.com 
 ;; Created: 五 4月  5 20:49:15 2019 (+0800)
-;; Last-Updated: 五 5月  3 18:27:40 2019 (+0800)
+;; Last-Updated: 日 5月  5 15:52:55 2019 (+0800)
 ;;           By: Hongyi Wu(吴鸿毅)
-;;     Update #: 4
+;;     Update #: 6
 ;; URL: http://wuhongyi.cn -->
 
 # README
@@ -67,8 +67,9 @@ m_modbus = NULL;
 
 ----
 
+> https://blog.csdn.net/qq_23670601/article/details/82155378  
 > https://blog.csdn.net/zhu530548851/article/details/22070335  
 > https://blog.csdn.net/doyoung1/article/details/49804311   
-
+> https://wenku.baidu.com/view/0db3f5c0690203d8ce2f0066f5335a8102d266cc.html   
 
 <!-- README.md ends here -->
