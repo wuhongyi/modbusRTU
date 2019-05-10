@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 一 5月  6 10:12:06 2019 (+0800)
-// Last-Updated: 一 5月  6 14:31:19 2019 (+0800)
+// Last-Updated: 五 5月 10 21:43:03 2019 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 52
+//     Update #: 53
 // URL: http://wuhongyi.cn 
 
 // g++ main.cc -lmodbus -o 123
@@ -63,6 +63,15 @@ int main(void)
   }
  
   printf("%d %d %d %d %d\n",regs,tab_reg[0],tab_reg[1],tab_reg[2],tab_reg[3]);
+
+
+  //0x6
+  // int sv = 20;
+  // if (modbus_write_register(mb,0x04,sv) == -1) {
+  //   fprintf(stderr, "%s\n", modbus_strerror(errno));
+  //   return -1;
+  // }
+
   modbus_close(mb);  
   modbus_free(mb);
   return 0;
