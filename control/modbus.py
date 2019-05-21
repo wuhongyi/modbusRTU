@@ -6,9 +6,9 @@
 # Author: Hongyi Wu(吴鸿毅)
 # Email: wuhongyi@qq.com 
 # Created: 一 5月  6 13:14:06 2019 (+0800)
-# Last-Updated: 一 5月  6 14:23:07 2019 (+0800)
+# Last-Updated: 五 5月 10 21:45:14 2019 (+0800)
 #           By: Hongyi Wu(吴鸿毅)
-#     Update #: 28
+#     Update #: 30
 # URL: http://wuhongyi.cn 
 
 import serial
@@ -33,7 +33,7 @@ def main():
         
         print('connected')
         #read 方法
-        print(master.execute(1,cst.READ_HOLDING_REGISTERS,107,2))#slaveAddr funCode startAddr regNum
+        print(master.execute(1,cst.READ_HOLDING_REGISTERS,0,5))#slaveAddr funCode startAddr regNum
         #write方法
         #print(master.execute(35, cst.WRITE_MULTIPLE_REGISTERS, 9, output_value=[1]))
         print('end of read')
