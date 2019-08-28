@@ -4,9 +4,9 @@
 // Author: Hongyi Wu(吴鸿毅)
 // Email: wuhongyi@qq.com 
 // Created: 五 8月 23 20:35:13 2019 (+0800)
-// Last-Updated: 五 8月 23 21:07:38 2019 (+0800)
+// Last-Updated: 三 8月 28 19:35:40 2019 (+0800)
 //           By: Hongyi Wu(吴鸿毅)
-//     Update #: 2
+//     Update #: 14
 // URL: http://wuhongyi.cn 
 
 // g++ temp.cc -lmodbus -o 123
@@ -22,7 +22,7 @@ int main(void)
 {
   modbus_t *mb = NULL;
   uint16_t tab_reg[64]={0};
-  mb = modbus_new_rtu("/dev/ttyUSB1",9600,'N',8,1);//open port
+  mb = modbus_new_rtu("/dev/ttyUSB3",9600,'N',8,1);//open port
   if (mb == NULL) {
     fprintf(stderr, "Unable to create the libmodbus context\n");
     return -1;
@@ -73,19 +73,20 @@ int main(void)
     }
   printf("%d %d %d %d %d\n",regs,tab_reg[0],tab_reg[1],tab_reg[2],tab_reg[3]);
 
-  // short data1,data2,data3,data4;
-  // data2 = (tab_reg[0]&0xFF)-48;
-  // data1 = ((tab_reg[0]&0xFF00)>>8)-48;
-  // data4 = (tab_reg[1]&0xFF)-48;
-  // data3 = ((tab_reg[1]&0xFF00)>>8);//43+ 45-
 
-  // std::cout<<data1<<" "<<data2<<" "<<data3<<" "<<data4<<std::endl;
-  // if(data3==43)
-  //   std::cout<<data1<<"."<<data2<<"E+"<<data4<<std::endl;
-  // else
-  //   std::cout<<data1<<"."<<data2<<"E-"<<data4<<std::endl;
+  uint16_t a = 0xffff;
+  // printf("%x\n", a);
+  // printf("%x\n", ((uint16_t)(~a)+1));
 
-  
+  if(a>=0x8000)
+    {
+      std::cout<<((uint16_t)(~a)+1)*(-0.1)<<std::endl;
+    }
+  else
+    {
+      std::cout<<0.1*a<<std::endl;
+    }
+
   //0x6
   // int sv = 2;
   // if (modbus_write_register(mb,0x0001,sv) == -1) {
